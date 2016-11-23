@@ -12,5 +12,14 @@ fusio: fusio.cc
 creadorDeVectors: creadorDeVectors.cc
 	g++ -o creadorDeVectors creadorDeVectors.cc
 
-clean: insercio bombolla fusio creadorDeVectors
-	rm insercio bombolla fusio creadorDeVectors
+MillorCasInsercioBombollaFusio: MillorCasoBombollaiInsercioiFusio.cc
+	g++ -o MillorCasoBombollaiInsercioiFusio MillorCasoBombollaiInsercioiFusio.cc
+
+PeorCasoFusio: PeorCasoFusio.cc
+	g++ -o PeorCasoFusio PeorCasoFusio.cc
+
+PitjorCasoBombollaiInsercio: PitjorCasoBombollaiInsercio.cc
+	g++ -o PitjorCasoBombollaiInsercio PitjorCasoBombollaiInsercio.cc
+
+clean: insercio bombolla fusio creadorDeVectors PitjorCasoBombollaiInsercio MillorCasoBombollaiInsercioiFusio PeorCasoFusio 
+	rm insercio bombolla fusio creadorDeVectors PitjorCasoBombollaiInsercio MillorCasoBombollaiInsercioiFusio PeorCasoFusio
