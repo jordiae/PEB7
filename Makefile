@@ -1,4 +1,4 @@
-all: insercio bombolla fusio creadorDeVectors
+all: insercio bombolla fusio creadorDeVectors MillorCasInsercioBombollaFusio PeorCasoFusio PitjorCasoBombollaiInsercio
 
 insercio: insercio.cc
 	g++ -o insercio insercio.cc
