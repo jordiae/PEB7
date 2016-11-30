@@ -23,6 +23,5 @@ int main() {
 	cin >> n;
 	vector<int> VectorAOrdenar(n);
 	for(int i=0; i< n; i++) cin >> VectorAOrdenar[i];
-        cout << "Gambate KUrsai" << endl;
 	ordena_per_insercio(VectorAOrdenar);
 }

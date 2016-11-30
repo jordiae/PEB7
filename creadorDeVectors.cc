@@ -7,9 +7,11 @@ using namespace std;
 int main(int argc, char const *argv[])
 {
 
-  int k = atoi(argv[1]);
-  int seed = atoi(argv[2]);
-  //cin >> k;   /*number of elements of the vector*/
+  /*int k = atoi(argv[1]);
+  int seed = atoi(argv[2]);*/
+  int k;
+  int seed = atoi(argv[1]);
+  cin >> k;   /*number of elements of the vector*/
   cout << k << " ";
   srand(seed);
   vector<int>v (k);

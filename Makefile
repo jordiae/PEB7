@@ -1,4 +1,4 @@
-all: insercio bombolla fusio creadorDeVectors MillorCasInsercioBombollaFusio PeorCasoFusio PitjorCasoBombollaiInsercio
+all: insercio bombolla fusio creadorDeVectors format n
 
 insercio: insercio.cc
 	g++ -o insercio insercio.cc
@@ -12,14 +12,11 @@ fusio: fusio.cc
 creadorDeVectors: creadorDeVectors.cc
 	g++ -o creadorDeVectors creadorDeVectors.cc
 
-MillorCasInsercioBombollaFusio: MillorCasoBombollaiInsercioiFusio.cc
-	g++ -o MillorCasoBombollaiInsercioiFusio MillorCasoBombollaiInsercioiFusio.cc
+format: format.cc
+	g++ -o format format.cc
 
-PeorCasoFusio: PeorCasoFusio.cc
-	g++ -o PeorCasoFusio PeorCasoFusio.cc
+n: n.cc
+	g++ -o n n.cc
 
-PitjorCasoBombollaiInsercio: PitjorCasoBombollaiInsercio.cc
-	g++ -o PitjorCasoBombollaiInsercio PitjorCasoBombollaiInsercio.cc
-
-clean: insercio bombolla fusio creadorDeVectors PitjorCasoBombollaiInsercio MillorCasoBombollaiInsercioiFusio PeorCasoFusio 
-	rm insercio bombolla fusio creadorDeVectors PitjorCasoBombollaiInsercio MillorCasoBombollaiInsercioiFusio PeorCasoFusio
+clean: insercio bombolla fusio creadorDeVectors format n
+	rm insercio bombolla fusio creadorDeVectors format n
