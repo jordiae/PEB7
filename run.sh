@@ -1,9 +1,9 @@
 #!/bin/bash
 
 make clean
-make all
+make random
 cp config.txt n.in
-for (( i = 0; i < 5; i++ )); do
+for (( i = 0; i < 3; i++ )); do
 	./n $i < n.in > n.out
 	./creadorDeVectors < n.out $RANDOM > VectorAleatori.txt
 	cat n.out >> out.txt

@@ -1,0 +1,5 @@
+N InsercioWorst BombollaWorst FusioWorst InsercioBest BombollaBest FusioBest
+
+1000 0.00 0.01 0.00 0.00 0.00 0.00
+2000 0.02 0.03 0.00 0.00 0.00 0.00
+3000 0.04 0.06 0.00 0.00 0.00 0.00
