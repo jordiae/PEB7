@@ -91,5 +91,7 @@ varconjunta=((N-1)*desvEstadistico1+(N-1)*desvEstadistico2)/(N*2-2)
 TEstadistico = (mitjEstadistico1*mitjEstadistico2)/(varconjunta*sqrt(1/N+1/N))
 #Per vectors entre 5 i 20 elements si ho segueix sent
 t.test(dades$IN10000,dades$FN10000,var.equal = TRUE)
+
+? t.test
 #Casos extrems merge to grandes
 
