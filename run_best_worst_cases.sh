@@ -3,7 +3,8 @@
 make clean
 make best_worst
 cp config.txt n.in
-for (( i = 0; i < 3; i++ )); do
+line=$(head -n 1 n.in)
+for (( i = 0; i < line; i++ )); do
 	./n $i < n.in > n.out
 	./PitjorCasoBombollaiInsercio < n.out > VectorPitjorCasBombollaiInsercio.txt
 	./PeorCasoFusio < n.out > VectorPitjorCasFusio.txt

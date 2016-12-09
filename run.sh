@@ -3,7 +3,8 @@
 make clean
 make random
 cp config.txt n.in
-for (( i = 0; i < 3; i++ )); do
+line=$(head -n 1 n.in)
+for (( i = 0; i < line; i++ )); do
 	./n $i < n.in > n.out
 	./creadorDeVectors < n.out $RANDOM > VectorAleatori.txt
 	cat n.out >> out.txt
