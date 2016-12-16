@@ -28,18 +28,8 @@ legend("topleft", legend=c("Bombolla","Insercio","Fusio"), lwd=c(3,3,3), col=c("
 #Proves Hipotesi
 #Si merge es el millor per vectors de +10000
 
-mitjanaI1 = mean(dades$Insercio)
-mitjanaB1 = mean(dades$Bombolla)
-mitjanaF1 = mean(dades$Fusio)
-
-mitjanaI2 = mean(dades$Insercio)/mean(dades$N)
-mitjanaB2 = mean(dades$Bombolla)/mean(dades$N)
-mitjanaF2 = mean(dades$Fusio)/mean(dades$N)
-
-
-mitjanaI3 = mitjanaI2*10000
-mitjanaB3 = mitjanaB2*10000
-mitjanaF3 = mitjanaF2*10000
+mitjanaI = mean(dades$Insercio)
+mitjanaB = mean(dades$Bombolla)
 
 
 #Hipotesis
@@ -53,28 +43,9 @@ qqplot(dades$N,dades$Bombolla)
 hist(dades$Insercio)
 hist(dades$Bombolla)
 
-
-
-
-dades$IN10000<-dades$Insercio*mean(dades$N)
-dades$BN10000<-dades$Bombolla*mean(dades$N)
-dades$FN10000<-dades$Fusio*mean(dades$N) 
-
-mitjEstadistico1 = mitjanaI1
-mitjEstadistico2 = mitjanaF1
-
-desvEstadistico1 = sd(dades$Insercio)
-desvEstadistico2 = sd(dades$Fusio)
-
-varEstadistico1 = desvEstadistico1*desvEstadistico1
-varEstadistico2 = desvEstadistico2*desvEstadistico2
 N = length(dades$N)
 
-varconjunta=((N-1)*desvEstadistico1+(N-1)*desvEstadistico2)/(N*2-2)
-
-TEstadistico = (mitjEstadistico1*mitjEstadistico2)/(varconjunta*sqrt(1/N+1/N))
 #Per vectors entre 5 i 20 elements si ho segueix sent
-t.test(dades$IN10000,dades$FN10000,var.equal = TRUE)
 
-? t.test
+t.test(dades$Bombolla,dades$Insercio,paired=TRUE,var.equal = FALSE)
 #Casos extrems merge to grandes
