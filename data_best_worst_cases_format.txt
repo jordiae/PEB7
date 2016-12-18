@@ -1,2 +1,0 @@
-N InsercioWorst BombollaWorst FusioWorst InsercioBest BombollaBest FusioBest
-
