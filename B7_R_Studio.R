@@ -1,10 +1,9 @@
 
 setwd("/home2/users/alumnes/1202152/dades/PEB7")
 
-dades = read.table("data.txt",header=TRUE)
-dadesBWCases = read.table("data_best_worst_cases.txt",header=TRUE)
+dades = read.table("DataMaxima.txt",header=TRUE)
 #4 Columnes N Insercio Bombolla Fusio
-
+dades<-DataMaxima
 #Busca medidors interesantes
 summary(dades)
 
@@ -18,10 +17,10 @@ plot(dades$N,dades$Bombolla,type="l",main="Gràfic n°elements/temps per bomboll
 #Plot dels 3 junts
 dades
 
-plot(dades$N, dades$Bombolla, type="l", lwd=5, col="blue",xlab="N", ylab="Temps", xaxs="i", yaxs="i")
-lines(dades$N,dades$Insercio, lwd=5, col="red")
+plot(dades$N, dades$Bombolla, type="p", lwd=1, col="blue",xlab="N", ylab="Temps", xaxs="i", yaxs="i")
+lines(dades$N,dades$Insercio, lwd=1, col="red")
 #lines(dades$N,dades$Fusio, lwd=20, col="green")
-legend("topleft", legend=c("Bombolla","Insercio","Fusio"), lwd=c(3,3,3), col=c("blue","red","green"))
+legend("topleft", legend=c("Bombolla","Insercio"), lwd=c(3,3), col=c("blue","red"))
 
 
 
@@ -36,8 +35,17 @@ mitjanaB = mean(dades$Bombolla)
 #Hipotesis nula H0: mitjanamerge = mitjanaisert 
 #               H1: mitjanamerge < mitjanainsert (unilateral)
 
+require(graphics)
 
-qqplot(dades$N,dades$Insercio)
+y <- rt(200, df = 5)
+qqnorm(log(dades$Insercio,exp(1))); qqline(dades$Insercio, col = 2)
+
+
+?qqplot
+?qqnorm
+
+qqnorm(dades$N,log(dades$Insercio,exp(1)),main = "Normal Q-Q Plot",)
+qqplot(dades$N,datum$Insercio)
 qqplot(dades$N,dades$Bombolla)
 
 hist(dades$Insercio)
@@ -46,6 +54,7 @@ hist(dades$Bombolla)
 N = length(dades$N)
 
 #Per vectors entre 5 i 20 elements si ho segueix sent
-
-t.test(dades$Bombolla,dades$Insercio,paired=TRUE,var.equal = FALSE)
+?t.test
+t.test(dades$Bombolla,dades$Insercio,alternative="greater",paired=TRUE,var.equal = FALSE,conf.level = .99)
 #Casos extrems merge to grandes
+
